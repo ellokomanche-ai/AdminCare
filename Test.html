@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Care | Elite Services - Administración & Seguridad Premium en Querétaro</title>
+    <meta name="description" content="Tranquilidad Absoluta para su Patrimonio. Elevando el estándar de vida en Querétaro a través de una gestión condominal impecable, seguridad inquebrantable y atención al detalle.">
+    
+    <!-- Open Graph SEO para Redes Sociales -->
+    <meta property="og:title" content="Admin Care | Elite Services">
+    <meta property="og:description" content="Tranquilidad Absoluta para su Patrimonio. Gestión condominal impecable.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+    <meta property="og:url" content="URL_DE_TU_SITIO_AQUI">
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #1a1a1a;
+            --text-light: #ffffff;
+            --text-gray: #b3b3b3;
+            --accent-gold: #d4af37;
+            --card-bg: #2a2a2a;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Montserrat', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-color);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-heading);
+            font-weight: 600;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- Utilidades --- */
+        .text-center { text-align: center; }
+        .text-gold { color: var(--accent-gold); }
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-gold);
+            color: #000;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+            border: none;
+            cursor: pointer;
+            font-family: var(--font-body);
+        }
+        .btn:hover { background-color: #c19b2e; }
+        .section-padding { padding: 80px 0; }
+        .section-subtitle {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-gold);
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .divider {
+            width: 40px;
+            height: 2px;
+            background-color: var(--accent-gold);
+            margin: 0 auto 30px;
+        }
+
+        /* --- Header / Nav --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(5px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--accent-gold);
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
+        }
+        .logo span {
+            font-size: 10px;
+            font-family: var(--font-body);
+            letter-spacing: 2px;
+            color: var(--text-light);
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--accent-gold); }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            padding-top: 80px;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        .hero h1 span {
+            font-style: normal;
+            display: block;
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            color: var(--text-gray);
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+        .hero-buttons .btn-outline {
+            background: transparent;
+            color: white;
+            border: 1px solid white;
+        }
+        .hero-buttons .btn-outline:hover {
+            background: white;
+            color: black;
+        }
+
+        /* --- Estándar de Excelencia --- */
+        .excelencia {
+            background-color: #1f1f1f;
+        }
+        .excelencia h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .excelencia p.intro {
+            max-width: 700px;
+            margin: 0 auto 50px;
+            color: var(--text-gray);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .feature-item {
+            text-align: center;
+        }
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 24px;
+            color: white;
+        }
+        .feature-item h3 {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        .feature-item p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        /* --- Servicios (Collages) --- */
+        .servicios {
+            background-color: var(--bg-color);
+        }
+        .servicios-intro {
+            max-width: 800px;
+            margin-bottom: 50px;
+        }
+        .servicios-intro h2 { font-size: 2.5rem; margin-bottom: 20px; text-transform: uppercase;}
+        .servicios-intro p { color: var(--text-gray); margin-bottom: 20px;}
+        
+        .service-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        .service-card:hover { transform: translateY(-5px); }
+        
+        .service-img-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 150px 150px;
+            gap: 2px;
+            background: #000;
+        }
+        .service-img-grid.style-1 > div:first-child { grid-row: span 2; }
+        .service-img-grid.style-2 > div:last-child { grid-column: span 2; grid-row: 2; }
+        
+        .service-img {
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .service-content {
+            padding: 20px;
+        }
+        .service-content h3 { font-size: 1.2rem; margin-bottom: 10px; }
+        .service-content p { color: var(--text-gray); font-size: 0.9rem; margin-bottom: 15px; }
+        .service-content a { color: var(--text-gray); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;}
+        .service-content a:hover { color: var(--accent-gold); }
+
+        /* --- Espacios de Vida (Galería) --- */
+        .espacios {
+            background-color: #1f1f1f;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 40px;
+        }
+        .gallery-item {
+            height: 200px;
+            border-radius: 8px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* --- Proceso --- */
+        .proceso {
+            background-color: var(--bg-color);
+        }
+        .process-steps {
+            max-width: 800px;
+            margin: 40px auto 0;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .step-card {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 8px;
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            position: relative;
+        }
+        .step-number {
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            background: var(--accent-gold);
+            color: black;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .step-icon {
+            color: var(--accent-gold);
+            font-size: 24px;
+            margin-top: 5px;
+        }
+        .step-content h3 { margin-bottom: 10px; }
+        .step-content p { color: var(--text-gray); font-size: 0.9rem; }
+        
+        .cta-section {
+            text-align: center;
+            margin-top: 60px;
+            padding: 40px;
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') center/cover;
+            border-radius: 8px;
+        }
+        .cta-section .icon { color: var(--accent-gold); font-size: 40px; margin-bottom: 20px;}
+        .cta-section h2 { margin-bottom: 15px; }
+        .cta-section p { color: var(--text-gray); margin-bottom: 20px; max-width: 600px; margin-left: auto; margin-right: auto;}
+
+        /* --- Acerca de Nosotros --- */
+        .nosotros {
+            background-color: #1f1f1f;
+        }
+        .nosotros-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            max-width: 800px;
+            margin: 40px auto 0;
+        }
+        .info-card {
+            background-color: var(--card-bg);
+            padding: 40px;
+            border-radius: 8px;
+        }
+        .info-card h3 { font-size: 1.8rem; margin-bottom: 20px; }
+        .info-card p { color: var(--text-gray); margin-bottom: 15px; font-size: 0.9rem;}
+        
+        .stats-card {
+            background-color: var(--card-bg);
+            padding: 40px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        .stat { text-align: center; }
+        .stat-num { color: var(--accent-gold); font-size: 2.5rem; font-family: var(--font-heading); font-weight: bold;}
+        .stat-text { color: var(--text-gray); font-size: 0.9rem; }
+        
+        .valores-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .valor-card {
+            background-color: var(--card-bg);
+            padding: 30px 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .valor-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--accent-gold);
+            color: black;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 20px;
+        }
+
+        /* --- Contacto y Footer --- */
+        .contacto {
+            background-color: var(--bg-color);
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            max-width: 600px;
+            margin: 40px auto 0;
+        }
+        .contact-card {
+            background-color: var(--card-bg);
+            padding: 20px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .contact-icon {
+            color: var(--accent-gold);
+            font-size: 24px;
+            width: 40px;
+            text-align: center;
+        }
+        .contact-info h4 { font-size: 1rem; margin-bottom: 5px;}
+        .contact-info p { color: var(--text-gray); font-size: 0.9rem; margin:0;}
+        
+        .emergency-card {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .emergency-card h3 { margin-bottom: 15px; }
+        .emergency-card p { color: var(--text-gray); font-size: 0.9rem; margin-bottom: 20px;}
+
+        footer {
+            background-color: #111;
+            padding: 60px 0 20px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-col h3 {
+            color: var(--accent-gold);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        .footer-col p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+        .footer-links {
+            list-style: none;
+        }
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        .footer-links a {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+        .footer-links a:hover { color: var(--accent-gold); }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .social-links a {
+            width: 35px;
+            height: 35px;
+            background: #222;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: background 0.3s;
+        }
+        .social-links a:hover { background: var(--accent-gold); color: black;}
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: var(--text-gray);
+            font-size: 0.8rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; 
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: var(--bg-color);
+                flex-direction: column;
+                padding: 20px;
+                text-align: center;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+            .nav-links.active { display: flex; }
+            .menu-toggle { display: block; }
+            
+            .hero h1 { font-size: 2.5rem; }
+            .excelencia h2 { font-size: 2rem; }
+            
+            .service-img-grid { grid-template-rows: 100px 100px; }
+            
+            .nosotros-grid { grid-template-columns: 1fr; }
+        }
+        @media (min-width: 768px) {
+            .nosotros-grid { grid-template-columns: 2fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container navbar">
+            <a href="#" class="logo">
+                ADMIN CARE
+                <span>Elite Services</span>
+            </a>
+            
+            <nav class="nav-links" id="navLinks">
+                <a href="#inicio">Inicio</a>
+                <a href="#excelencia">Excelencia</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#proceso">Proceso</a>
+                <a href="#nosotros">Nosotros</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+            
+            <button class="menu-toggle" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="container">
+            <span class="section-subtitle">Administración & Seguridad Premium</span>
+            <h1>Tranquilidad Absoluta <br><span>para su Patrimonio</span></h1>
+            <p>Elevando el estándar de vida en Querétaro a través de una gestión condominal impecable, seguridad inquebrantable y atención al detalle.</p>
+            <div class="hero-buttons">
+                <a href="#contacto" class="btn">Solicitar Asesoría <i class="fas fa-arrow-right"></i></a>
+                <a href="#servicios" class="btn btn-outline">Explorar Servicios</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Estándar de Excelencia -->
+    <section id="excelencia" class="section-padding excelencia text-center">
+        <div class="container">
+            <div class="divider"></div>
+            <h2>El Estándar de Excelencia</h2>
+            <p class="intro">No solo administramos propiedades; cultivamos comunidades seguras y prósperas. Nuestro enfoque integral garantiza que cada aspecto de su condominio funcione con precisión suiza.</p>
+            
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Seguridad Inquebrantable</h3>
+                    <p>Estrictos protocolos de acceso, personal altamente capacitado y monitoreo 24/7 para garantizar la paz mental de su familia.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-home"></i></div>
+                    <h3>Mantenimiento Preventivo</h3>
+                    <p>Preservamos el valor de su patrimonio mediante programas de mantenimiento rigurosos, evitando problemas antes de que ocurran.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-star"></i></div>
+                    <h3>Transparencia Total</h3>
+                    <p>Gestión financiera clara y reportes detallados. Usted siempre sabrá exactamente cómo se invierten los recursos de su comunidad.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="servicios" class="section-padding servicios">
+        <div class="container">
+            <div class="servicios-intro">
+                <span class="section-subtitle">Nuestras Soluciones</span>
+                <h2>Nuestros Servicios y Red de Excelencia</h2>
+                <p>Nuestra propuesta de valor es integral: contamos con un selecto directorio de proveedores y colaboradores de confianza, cuya experiencia garantiza los estándares más exigentes del mercado bajo una Gestión Centralizada...</p>
+                <a href="#" class="text-gold" style="font-weight: 600;">Ver catálogo completo <i class="fas fa-chevron-right"></i></a>
+            </div>
+
+            <div class="service-cards">
+                <!-- Servicio 1 -->
+                <div class="service-card">
+                    <div class="service-img-grid style-1">
+                        <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1576089172869-4f5f6f315620?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')"></div>
+                        <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1582653211939-9eb06b9b392a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')"></div>
+                        <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1537233810141-8c4d5a9b9a4c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')"></div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Mantenimiento de Albercas</h3>
+                        <p>Mantenimiento integral de albercas y áreas húmedas.</p>
+                        <a href="#">Descubrir <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Servicio 2 -->
+                <div class="service-card">
+                    <div class="service-img-grid">
+                        <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')"></div>
+                        <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1542013936693-884638332954?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')"></div>
+                        <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')"></div>
+                        <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1517581177682-a085bb7ffb15?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')"></div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Mantenimiento General</h3>
+                        <p>Cuidado y reparación constante de espacios compartidos.</p>
+                        <a href="#">Descubrir <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Servicio 3 -->
+                <div class="service-card">
+                    <div class="service-img-grid style-2">
+                        <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')"></div>
+                        <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')"></div>
+                        <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1628177142898-93e46e52333b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')"></div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Limpieza Profunda</h3>
+                        <p>Higiene impecable en todas las instalaciones del condominio.</p>
+                        <a href="#">Descubrir <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                 <!-- Servicio 4 -->
+                 <div class="service-card">
+                    <div class="service-img-grid">
+                        <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1589923188900-85dae523342b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')"></div>
+                        <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1416879598555-22008fb92994?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')"></div>
+                        <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1599839619722-39751411ea63?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')"></div>
+                        <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1558904541-efa843a96f0f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')"></div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Jardinería y Paisajismo</h3>
+                        <p>Espacios verdes siempre hermosos y bien cuidados.</p>
+                        <a href="#">Descubrir <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Espacios de Vida -->
+    <section class="section-padding espacios text-center">
+        <div class="container">
+            <span class="section-subtitle">Nuestro Entorno</span>
+            <h2>Espacios de Vida</h2>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1573497620053-ea5300f94f21?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')"></div>
+                <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1602052793312-b99c2a92b5c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')"></div>
+                <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1511895426328-dc8714191300?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')"></div>
+                <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1558002038-1055907df827?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proceso -->
+    <section id="proceso" class="section-padding proceso">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-subtitle">Nuestro Proceso</span>
+                <h2>Cómo Trabajamos</h2>
+                <p class="intro">Un enfoque estructurado y transparente que garantiza la excelencia en cada etapa.</p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-icon"><i class="fas fa-check-circle"></i></div>
+                    <div class="step-content">
+                        <h3>Diagnóstico y Evaluación</h3>
+                        <p>Análisis profundo de su propiedad, identificando necesidades, riesgos y oportunidades de mejora para un plan personalizado.</p>
+                    </div>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-icon"><i class="fas fa-file-invoice"></i></div>
+                    <div class="step-content">
+                        <h3>Cotizaciones Individuales</h3>
+                        <p>Propuestas detalladas y transparentes adaptadas a sus requerimientos específicos, con opciones de servicios integrados.</p>
+                    </div>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-icon"><i class="fas fa-bolt"></i></div>
+                    <div class="step-content">
+                        <h3>Formalización del Servicio</h3>
+                        <p>Establecimiento de contratos claros, cronogramas y protocolos de comunicación para una ejecución impecable.</p>
+                    </div>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <div class="step-icon"><i class="fas fa-medal"></i></div>
+                    <div class="step-content">
+                        <h3>Medidas Especiales</h3>
+                        <p>Soluciones innovadoras y personalizadas que van más allá de lo estándar, garantizando resultados excepcionales.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cta-section">
+                <div class="icon"><i class="fas fa-shield-alt"></i></div>
+                <h2>Proteja su Inversión</h2>
+                <p>Permítanos demostrarle cómo nuestro personal puede transformar la dinámica y seguridad de su condominio.</p>
+                <a href="#contacto" class="btn">Agendar una Consulta</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Acerca de Nosotros & Valores -->
+    <section id="nosotros" class="section-padding nosotros">
+        <div class="container text-center">
+            <h2>Acerca de Nosotros</h2>
+            <p class="section-subtitle" style="margin-top: 10px;">Admin Care - Soluciones Administrativas Integrales</p>
+            
+            <div class="nosotros-grid text-left" style="text-align: left;">
+                <div class="info-card">
+                    <h3>Quiénes Somos</h3>
+                    <p>Admin Care es una empresa especializada en brindar soluciones integrales de apoyo administrativo y operativo, diseñadas para simplificar, organizar y potenciar el crecimiento de pequeños negocios, emprendedores y profesionales independientes.</p>
+                    <p>Nacimos con la visión de quitarle la carga de las tareas administrativas repetitivas y complejas, para que te concentres en lo que realmente importa: hacer crecer tu proyecto y disfrutar de tu tiempo.</p>
+                    
+                    <div style="margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div>
+                            <h4 style="color: var(--accent-gold); margin-bottom: 10px;"><i class="fas fa-bullseye"></i> Nuestra Misión</h4>
+                            <p style="font-size: 0.85rem;">Ofrecer servicios administrativos confiables, eficientes y personalizados, adaptados a las necesidades únicas de cada cliente, garantizando orden, claridad y tranquilidad en cada proceso.</p>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--accent-gold); margin-bottom: 10px;"><i class="fas fa-eye"></i> Nuestra Visión</h4>
+                            <p style="font-size: 0.85rem;">Ser el aliado administrativo de confianza, líder en la región.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="stats-card">
+                    <div class="stat">
+                        <div class="stat-num">20+</div>
+                        <div class="stat-text">Años de Experiencia</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-num">50+</div>
+                        <div class="stat-text">Condominios Administrados</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-num">98%</div>
+                        <div class="stat-text">Satisfacción del Cliente</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="divider" style="margin-top: 60px;"></div>
+            <h2>Nuestros Valores</h2>
+            <p class="text-gray">Los principios que guían nuestro trabajo diario</p>
+            
+            <div class="valores-grid">
+                <div class="valor-card">
+                    <div class="valor-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h4 style="margin-bottom: 10px;">Compromiso</h4>
+                    <p style="font-size: 0.8rem; color: var(--text-gray);">Damos lo mejor en cada tarea, cuidando cada detalle.</p>
+                </div>
+                <div class="valor-card">
+                    <div class="valor-icon"><i class="fas fa-award"></i></div>
+                    <h4 style="margin-bottom: 10px;">Confianza</h4>
+                    <p style="font-size: 0.8rem; color: var(--text-gray);">Manejamos tu información con total ética y discreción.</p>
+                </div>
+                <div class="valor-card">
+                    <div class="valor-icon"><i class="fas fa-users"></i></div>
+                    <h4 style="margin-bottom: 10px;">Organización</h4>
+                    <p style="font-size: 0.8rem; color: var(--text-gray);">Transformamos el desorden en claridad y eficiencia.</p>
+                </div>
+                <div class="valor-card">
+                    <div class="valor-icon"><i class="fas fa-heart"></i></div>
+                    <h4 style="margin-bottom: 10px;">Cercanía</h4>
+                    <p style="font-size: 0.8rem; color: var(--text-gray);">Lo escuchamos y adaptamos nuestros servicios a sus necesidades.</p>
+                </div>
+                <div class="valor-card">
+                    <div class="valor-icon"><i class="fas fa-clock"></i></div>
+                    <h4 style="margin-bottom: 10px;">Eficiencia</h4>
+                    <p style="font-size: 0.8rem; color: var(--text-gray);">Optimizamos tiempos y recursos para mejores resultados.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="section-padding contacto">
+        <div class="container">
+            <div class="text-center">
+                <h2>Información de Contacto</h2>
+                <p class="intro">Estamos disponibles para atenderle. No dude en comunicarse con nosotros por cualquiera de los siguientes medios.</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="contact-info">
+                        <h4>Dirección</h4>
+                        <p>Querétaro, Querétaro, México</p>
+                    </div>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                    <div class="contact-info">
+                        <h4>Teléfono</h4>
+                        <p>+52 (729) 859 2199</p>
+                    </div>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                    <div class="contact-info">
+                        <h4>Correo Electrónico</h4>
+                        <p>careadmin2025@gmail.com</p>
+                    </div>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon"><i class="fas fa-clock"></i></div>
+                    <div class="contact-info">
+                        <h4>Horario de Atención</h4>
+                        <p>Lunes a Viernes: 9:00 AM - 6:00 PM<br>Sábados: 9:00 AM - 2:00 PM<br>Emergencias: 24/7</p>
+                    </div>
+                </div>
+                
+                <div class="emergency-card">
+                    <h3>Servicio de Emergencia</h3>
+                    <p>Para emergencias fuera del horario de oficina, contamos con personal disponible las 24 horas.</p>
+                    <a href="tel:+527298592199" class="btn">Llamar Ahora</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#" class="logo" style="margin-bottom: 20px;">
+                        ADMIN CARE
+                        <span>Elite Services</span>
+                    </a>
+                    <p>Administración profesional de condominios y viviendas en Querétaro con 20 años de experiencia.</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#nosotros">Acerca de Nosotros</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Servicios</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Mantenimiento</a></li>
+                        <li><a href="#">Limpieza</a></li>
+                        <li><a href="#">Jardinería</a></li>
+                        <li><a href="#">Seguridad</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contacto</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt text-gold" style="width: 20px;"></i> Querétaro, México</li>
+                        <li><i class="fas fa-phone-alt text-gold" style="width: 20px;"></i> +52 (729) 859 2199</li>
+                        <li><i class="fas fa-envelope text-gold" style="width: 20px;"></i> careadmin2025@gmail.com</li>
+                    </ul>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Admin Care Elite Services. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script simple para menú móvil -->
+    <script>
+        function toggleMenu() {
+            var x = document.getElementById("navLinks");
+            if (x.className === "nav-links") {
+                x.className += " active";
+            } else {
+                x.className = "nav-links";
+            }
+        }
+    </script>
+</body>
+</html>
